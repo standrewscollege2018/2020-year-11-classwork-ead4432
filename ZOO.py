@@ -7,7 +7,7 @@ child_age = int(input("What is your age"))
 if child_age <= CHILD_AGE:
     print("You must pay the Child price which is $", child_price)
 else:
-    ("You do not need to pay the child price ")
+    (" Welcome senior citizen you do not need to pay the child price ")
         
 print("Welcome to the zoo")
 
