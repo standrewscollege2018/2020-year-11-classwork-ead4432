@@ -11,8 +11,8 @@ C = 50
 user_score = int(input("What score did you get"))
 
 #Checking if it is a pass grade
-if user_score >= 101:
-    print("The test maximum score was 100 your a muppet")
+if user_score >= 101 or user_score < 0:
+    print("The test maximum score was 100 and the minimum was 0 your a muppet")
 elif user_score >= 90:
     print("You got an A!")
 elif user_score >= 70:
