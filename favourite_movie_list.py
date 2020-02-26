@@ -2,6 +2,8 @@
 movie = []
 print("Hello please enter your favouite movies")
 for i in range (3):
-    movie.append(input("Please entre moivre"))
-print("You have chosen", movie[0], movie[1], movie[2])
-print("Good choices")
+    movie.append(input("Please enter movie"))
+
+for i in range(len(movie)):
+    print(i+1, ":", movie[i])
+
