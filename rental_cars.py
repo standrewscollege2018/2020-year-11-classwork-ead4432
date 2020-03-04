@@ -9,6 +9,9 @@ i = 0
 keep_asking = True
 while keep_asking == True:
   try:
+    #get the name
+    name = input("What is your name")
+    #how many seats do they want
     seats_wanted = int(input("How many seats do you want"))
     for i in range (len(cars)):
       print(i+1, cars[i], "has", seats[i], "seats")
