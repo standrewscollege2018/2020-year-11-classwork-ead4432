@@ -12,24 +12,31 @@ while keep_asking == True:
     #get the name
     name = input("What is your name")
     #how many seats do they want
-    seats_wanted = int(input("How many seats do you want"))
-    for i in range (len(cars)):
-      print(i+1, cars[i], "has", seats[i], "seats")
-    #ask them which number they want
-    car_number = int(input("What number car do you want(please enter the number in front of the car)"))
-    #ask if they are sure it is the car they want
-    check_car = input("Is this the car you want the {}, please enter yes or no".format(cars[car_number-1]))
-    check_car.lower
-    if check_car == "no":
-      car_number = int(input("What number car do you want(please enter the number in front of the car)"))
+    seats_wanted = int(input("How many seats do you want type -1 to stop program"))
+    if seats_wanted == -1:
+      keep_asking = False
+    elif seats_wanted <= 0:
+      print("Please enter a valid number")
     else:
-      if availability[car_number-1] == False:
-        print("Your requested car is not availible for hire")
+        for i in range (len(cars)):
+          print(i+1, cars[i], "has", seats[i], "seats")
+        #ask them which number they want
         car_number = int(input("What number car do you want(please enter the number in front of the car)"))
-      elif check_car == "yes":
-        print("You have booked the", cars[car_number-1], "with", seats[car_number-1], "seats")
-        availability[car_number-1] = False
-      else:
-        print("Error That ain't working please try again")
+        #ask if they are sure it is the car they want
+        check_car = input("Is this the car you want the {}, please enter yes or no".format(cars[car_number-1]))
+        check_car.lower
+        if check_car == "no":
+          car_number = int(input("What number car do you want(please enter the number in front of the car)"))
+        else:
+          if availability[car_number-1] == False:
+            print("Your requested car is not availible for hire")
+            car_number = int(input("What number car do you want(please enter the number in front of the car)"))
+          elif check_car == "yes":
+            print("You have booked the", cars[car_number-1], "with", seats[car_number-1], "seats")
+            availability[car_number-1] = False
+          else:
+            print("Error That ain't working please try again")
   except:
     print("Error That ain't working please try again")
+indices = [i for i, x in enumerate(availability) if x == "False"]
+print(cars[indices])
