@@ -38,5 +38,3 @@ while keep_asking == True:
             print("Error That ain't working please try again")
   except:
     print("Error That ain't working please try again")
-indices = [i for i, x in enumerate(availability) if x == "False"]
-print(cars[indices])
